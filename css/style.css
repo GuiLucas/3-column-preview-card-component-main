@@ -28,6 +28,7 @@ main {
     min-height: 100vh;
     display: grid;
     place-items: center;
+    background-color: var(--light-gray);
 }
 
 .container { 
@@ -94,7 +95,8 @@ p {
 }
 
 button {
-    font-size: 1em;
+    font-size: 0.9em;
+    font-family: 'Lexend Deca', sans-serif;
     padding: 0.75rem 2rem 0.75rem 2rem ;
     border-radius: 1.5rem;
     border: none;
