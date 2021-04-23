@@ -22,10 +22,6 @@ body {
     font-size: 15px;
     font-family: 'Lexend Deca', sans-serif;
     line-height: 1.5;
-   /* background-image: url('/design/desktop-design.jpg');*/
-    background-repeat: no-repeat;
-    background-position: center;
-
 }
 
 main {
@@ -40,25 +36,27 @@ main {
     max-width: 57.5rem;
     overflow: hidden;
     border-radius: 0.5rem;
-    margin: 4rem 0 0 0;
+    margin-top: 8rem;
 }
 
 h1 { 
     color: var(--light-gray);
     font-family: 'Big Shoulders Display', cursive;
-    font-size: 2.5em;
+    font-size: 2.65em;
     text-transform: uppercase;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.3rem;
 }
 
 p {
+    line-height: 1.7;
     color: var(--transparent-white);
-    margin-bottom: 4rem;
+    margin-bottom: 5.2rem;
 }
 
 .card { 
-    padding: 3.4rem 3rem 3rem 3rem;
+    padding: 3rem;
+
 }
 
 .sedans {
@@ -74,7 +72,21 @@ p {
 }
 
 .icon { 
-    margin-bottom: 2rem;
+    margin-bottom: 1.9rem;
+    animation: dropIn 1s ease forwards;
+    animation-delay: calc(var(--order) * 100ms);
+}
+
+@keyframes dropIn {
+    from {
+        transform: translateY(-500px);
+        opacity: 0;
+    }
+
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .icon img {
@@ -83,25 +95,66 @@ p {
 
 button {
     font-size: 1em;
-    background-color: var(--light-gray);
     padding: 0.75rem 2rem 0.75rem 2rem ;
     border-radius: 1.5rem;
-    border: solid 1px transparent;
+    border: none;
     outline: none;
-    mix-blend-mode: screen;
     cursor: pointer;
+    mix-blend-mode: screen;
+    border: solid 2px transparent;
+    background-color: var(--light-gray);
+    animation: paint 500ms ease-in forwards;
 }  
 
 button:hover {
-    border: solid 1px var(--light-gray);
-    background: none;
-    color: var(--light-gray);
+    animation: disolve 500ms ease-in forwards;
+}
+
+@keyframes paint {   
+    from {
+        border: solid 2px var(--light-gray);
+        color: var(--light-gray);
+        background: none;
+    }
+    
+    to {
+        background-color: var(--light-gray);
+    }
+}
+
+@keyframes disolve {   
+    from {
+        background-color: var(--light-gray);
+    }
+    
+    to {
+        border: solid 2px var(--light-gray);
+        color: var(--light-gray);
+        background: none;
+    }
 }
 
 @media only screen and (max-width: 950px) {
     .container {
         max-width: 20rem;
         grid-auto-flow: row;
+        margin-top: 4rem;
     }
-    
+
+    .icon {
+        animation: none !important;
+    }
+
+    button, button:hover {
+        animation: none !important;
+        background-color: var(--light-gray);
+    }
+
+    p { 
+        margin-bottom: 2rem;
+    }
+
+    .attribution {
+        margin: 2rem;
+    }
 }
