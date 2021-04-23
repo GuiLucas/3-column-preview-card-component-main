@@ -86,15 +86,22 @@ button {
     background-color: var(--light-gray);
     padding: 0.75rem 2rem 0.75rem 2rem ;
     border-radius: 1.5rem;
-    border: none;
+    border: solid 1px transparent;
     outline: none;
     mix-blend-mode: screen;
-    color: var(--light-gray);
+    cursor: pointer;
 }  
 
 button:hover {
-    mix-blend-mode: normal;
-    
-    background-color: none;
+    border: solid 1px var(--light-gray);
+    background: none;
+    color: var(--light-gray);
+}
 
+@media only screen and (max-width: 950px) {
+    .container {
+        max-width: 20rem;
+        grid-auto-flow: row;
+    }
+    
 }
